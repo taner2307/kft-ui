@@ -41,24 +41,39 @@
             <div class="row tm-banner-row tm-banner-row-header">
               <div class="col-xs-12">
                 <div class="tm-banner-header">
-                  <h1 class="text-uppercase tm-banner-title">Let's begin</h1>
+                  <h1 class="text-uppercase tm-banner-title">Haydi Başlayın</h1>
                   <img src="../assets/img/dots-3.png" alt="Dots">
-                  <p class="tm-banner-subtitle">We assist you to choose the best.</p>
+                  <p class="tm-banner-subtitle">İşiniz için servissecin.com</p>
                   <a href="javascript:void(0)" class="tm-down-arrow-link"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
                 </div>
               </div>  <!-- col-xs-12 -->
             </div> <!-- row -->
             <div class="row tm-banner-row" id="tm-section-search">
 
-              <form class="tm-search-form tm-section-pad-2">
+              <form v-if="seekerStep1" class="tm-search-form tm-section-pad-2" style="margin-bottom: 40px">
                 <div class="form-row tm-search-form-row">
                   <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
-                    <label for="inputCity">Choose Your Destination</label>
-                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Type your destination...">
+                    <label for="inputCity">Ad Soyad</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Ad Soyad...">
                   </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Email</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Email...">
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Telefon</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Telefon...">
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Nereden (İl)</label>
+                    <select name="room" class="form-control tm-select" id="inputRoom">
+                      <option value="1" selected>İstanbul</option>
+                    </select>                  </div>
                   <div class="form-group tm-form-group tm-form-group-1">
                     <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
-                      <label for="inputRoom">How many rooms?</label>
+                      <label for="inputRoom">Nereden (İlçe)</label>
                       <select name="room" class="form-control tm-select" id="inputRoom">
                         <option value="1" selected>1 Room</option>
                         <option value="2">2 Rooms</option>
@@ -72,22 +87,11 @@
                         <option value="10">10 Rooms</option>
                       </select>
                     </div>
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
-                      <label for="inputAdult">Adult</label>
-                      <select name="adult" class="form-control tm-select" id="inputAdult">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                      </select>
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                      <label for="inputCity">Belde</label>
+                      <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Belde...">
                     </div>
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+<!--                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
 
                       <label for="inputChildren">Children</label>
                       <select name="children" class="form-control tm-select" id="inputChildren">
@@ -102,22 +106,234 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                       </select>
-                    </div>
+                    </div>-->
                   </div>
                 </div> <!-- form-row -->
                 <div class="form-row tm-search-form-row">
-
-                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
-                    <label for="inputCheckIn">Check In Date</label>
-                    <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
-                  </div>
-                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
-                    <label for="inputCheckOut">Check Out Date</label>
-                    <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
-                  </div>
                   <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
-                    <label for="btnSubmit">&nbsp;</label>
-                    <button type="submit" class="btn btn-primary tm-btn tm-btn-search text-uppercase" id="btnSubmit">İleri</button>
+                    <label for="inputCity">Nereye (İl)</label>
+                    <select name="room" class="form-control tm-select" id="inputRoom">
+                      <option value="1" selected>1 Room</option>
+                      <option value="2">2 Rooms</option>
+                      <option value="3">3 Rooms</option>
+                      <option value="4">4 Rooms</option>
+                      <option value="5">5 Rooms</option>
+                      <option value="6">6 Rooms</option>
+                      <option value="7">7 Rooms</option>
+                      <option value="8">8 Rooms</option>
+                      <option value="9">9 Rooms</option>
+                      <option value="10">10 Rooms</option>
+                    </select>                  </div>
+                  <div class="form-group tm-form-group tm-form-group-1">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                      <label for="inputRoom">Nereye (İlçe)</label>
+                      <select name="room" class="form-control tm-select" id="inputRoom">
+                        <option value="1" selected>1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                        <option value="4">4 Rooms</option>
+                        <option value="5">5 Rooms</option>
+                        <option value="6">6 Rooms</option>
+                        <option value="7">7 Rooms</option>
+                        <option value="8">8 Rooms</option>
+                        <option value="9">9 Rooms</option>
+                        <option value="10">10 Rooms</option>
+                      </select>
+                    </div>
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                      <label for="inputCity">Belde</label>
+                      <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Belde...">
+                    </div>
+                    <!--                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+
+                                          <label for="inputChildren">Children</label>
+                                          <select name="children" class="form-control tm-select" id="inputChildren">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                          </select>
+                                        </div>-->
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Ayda Çalışma Süresi</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Ayda Çalışma Günü... (22 gün)">
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Giriş Saati</label><br/>
+                    <vue-timepicker style="width: 130px" hour-label="Saat" minute-label="Dakika"></vue-timepicker>
+
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w" style="margin-left: 50px">
+                    <label for="inputCity">Çıkış Saati</label><br/>
+                    <vue-timepicker style="width: 130px" hour-label="Saat" minute-label="Dakika"></vue-timepicker>
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                  <button type="submit" class="btn btn-primary tm-btn tm-btn-search text-uppercase" @click="openSeekerStep2" id="btnSubmit">İleri (Araç Bilgileri)</button>
+                </div>
+                </div>
+              </form>
+              <form v-if="seekerStep2" class="tm-search-form tm-section-pad-2" style="margin-bottom: 40px">
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Araç Markası</label>
+                    <select name="room" class="form-control tm-select" id="inputRoom" @change="onChangeBrand">
+                      <option value="farketmez" selected>Farketmez</option>
+                      <option value="bmc">BMC</option>
+                      <option value="citroen">Citroen</option>
+                      <option value="fiat">Fiat</option>
+                      <option value="ford">Ford</option>
+                      <option value="hyundai">Hyundai</option>
+                      <option value="iveco">Iveco</option>
+                      <option value="isuzu">Isuzu</option>
+                      <option value="karsan">Karsan</option>
+                      <option value="man">Man</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="mitsubishi">Mitsubishi</option>
+                      <option value="otokar">Otokar</option>
+                      <option value="peugeot">Peugeot</option>
+                      <option value="renault">Renault</option>
+                      <option value="temsa">Temsa</option>
+                      <option value="volkswagen">Volswagen</option>
+                    </select>
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Araç Model</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Email...">
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Araç Yılı</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Telefon...">
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Araç Kapasitesi</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Telefon...">
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-1">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                      <label for="inputRoom">Nereden (İlçe)</label>
+                      <select name="room" class="form-control tm-select" id="inputRoom">
+                        <option value="1" selected>1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                        <option value="4">4 Rooms</option>
+                        <option value="5">5 Rooms</option>
+                        <option value="6">6 Rooms</option>
+                        <option value="7">7 Rooms</option>
+                        <option value="8">8 Rooms</option>
+                        <option value="9">9 Rooms</option>
+                        <option value="10">10 Rooms</option>
+                      </select>
+                    </div>
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                      <label for="inputCity">Belde</label>
+                      <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Belde...">
+                    </div>
+                    <!--                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+
+                                          <label for="inputChildren">Children</label>
+                                          <select name="children" class="form-control tm-select" id="inputChildren">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                          </select>
+                                        </div>-->
+                  </div>
+                </div> <!-- form-row -->
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Nereye (İl)</label>
+                    <select name="room" class="form-control tm-select" id="inputRoom">
+                      <option value="1" selected>1 Room</option>
+                      <option value="2">2 Rooms</option>
+                      <option value="3">3 Rooms</option>
+                      <option value="4">4 Rooms</option>
+                      <option value="5">5 Rooms</option>
+                      <option value="6">6 Rooms</option>
+                      <option value="7">7 Rooms</option>
+                      <option value="8">8 Rooms</option>
+                      <option value="9">9 Rooms</option>
+                      <option value="10">10 Rooms</option>
+                    </select>                  </div>
+                  <div class="form-group tm-form-group tm-form-group-1">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                      <label for="inputRoom">Nereye (İlçe)</label>
+                      <select name="room" class="form-control tm-select" id="inputRoom">
+                        <option value="1" selected>1 Room</option>
+                        <option value="2">2 Rooms</option>
+                        <option value="3">3 Rooms</option>
+                        <option value="4">4 Rooms</option>
+                        <option value="5">5 Rooms</option>
+                        <option value="6">6 Rooms</option>
+                        <option value="7">7 Rooms</option>
+                        <option value="8">8 Rooms</option>
+                        <option value="9">9 Rooms</option>
+                        <option value="10">10 Rooms</option>
+                      </select>
+                    </div>
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                      <label for="inputCity">Belde</label>
+                      <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Belde...">
+                    </div>
+                    <!--                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+
+                                          <label for="inputChildren">Children</label>
+                                          <select name="children" class="form-control tm-select" id="inputChildren">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                          </select>
+                                        </div>-->
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <label for="inputCity">Ayda Çalışma Süresi</label>
+                    <input name="destination" type="text" class="form-control" id="inputCity" placeholder="Ayda Çalışma Günü... (22 gün)">
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w">
+                    <label for="inputCity">Giriş Saati</label><br/>
+                    <vue-timepicker style="width: 130px" hour-label="Saat" minute-label="Dakika"></vue-timepicker>
+
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-w" style="margin-left: 50px">
+                    <label for="inputCity">Çıkış Saati</label><br/>
+                    <vue-timepicker style="width: 130px" hour-label="Saat" minute-label="Dakika"></vue-timepicker>
+                  </div>
+                </div>
+                <div class="form-row tm-search-form-row">
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <button type="submit" class="btn btn-danger tm-btn tm-btn-search text-uppercase" @click="backSeekerStep1" id="btnSubmit">Geri</button>
+
+                  </div>
+                  <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                    <button type="submit" class="btn btn-primary tm-btn tm-btn-search text-uppercase" @click="openSeekerStep3" id="btnSubmit">İleri (Sözleşme ve Güzergah Bilgileri)</button>
                   </div>
                 </div>
               </form>
@@ -674,10 +890,83 @@
 </template>
 
 <script>
+import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      seeker: {
+        email: "",
+        preferredVehicles: [],
+        preferredTotalVehicle: 0,
+        vehicleMinYear: 2000,
+        seatNumber: "",
+        km: 0,
+        travel: {
+          cityForWhere: "",
+          districtForWhere: "",
+          townForWhere: "",
+          cityForTo: "",
+          districtForTo: "",
+          townForTo: "",
+          startTime: "",
+          finishTime: "",
+          totalKm: ""
+        },
+        workingDay: "",
+        address: "",
+        telephone: "",
+        description: "",
+        contractDuration: ""
+      },
+      seekerStep1: true,
+      seekerStep2: false,
+      seekerStep3: false,
+      bmcModelList: ["Farketmez","Levend"],
+      citroenModelList: ["Farketmez","Jumper"],
+      fiatModelList: ["Farketmez","Ducato"],
+      fordModelList: ["Farketmez","Transit"],
+      hyundaiModelList: ["Farketmez","H Serisi","Starex"],
+      ivecoModelList: ["Farketmez","Eurobus","M23","M29"],
+      isuzuModelList: ["Farketmez","Citibus","MD","Novo","Royal","Roybus","Turkuaz","Urban"],
+      karsanModelList: ["Farketmez","J10","Jest"],
+      manModelList: ["Farketmez","Fortuna","TGE"],
+      mercedesModelList: ["Farketmez","0403", "Sprinter","Travego","Viano","Vito"],
+      mitsubishiModelList: ["Farketmez","Prenses","Prestij"],
+      opelModelList: ["Farketmez","Movana"],
+      otokarModelList: ["Farketmez","80","Doruk","M Serisi","Poyraz", "Sultan","Tempo"],
+      otoyolModelList: ["Farketmez","Diğer Modeller"],
+      peugeotModelList: ["Farketmez","Boxer","J9", "Premier"],
+      renaultModelList: ["Farketmez","Master","Traffic"],
+      temsaModelList: ["Farketmez","Prestij"],
+      volkswagenModelList: ["Farketmez","Caravelle","Crafter","Transporter","Volt"],
+    }
+  },
+  components: {VueTimepicker},
+  methods: {
+    openSeekerStep2() {
+      this.seekerStep1 = false;
+      this.seekerStep2 = true;
+    },
+    openSeekerStep3() {
+      this.seekerStep2 = false;
+      this.seekerStep3 = true;
+    },
+    backSeekerStep2() {
+      this.seekerStep3 = false;
+      this.seekerStep2 = true;
+    },
+    backSeekerStep1() {
+      this.seekerStep2 = false;
+      this.seekerStep1 = true;
+    },
+    onChangeBrand() {
+
+    }
   }
 }
 </script>
