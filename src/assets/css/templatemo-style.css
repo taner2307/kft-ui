@@ -45,6 +45,8 @@ p:last-child { margin-bottom: 0; }
 
 .tm-bg-primary { background: #69c6ba; }
 .tm-bg-highlight { background: #c66995; }
+.tm-bg-custom { background: #c69500; }
+
 
 .btn-primary {
     background: #69c6ba;

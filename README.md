@@ -1,4 +1,4 @@
-# servissecin-web
+# kaft-project
 
 ## Project setup
 ```
